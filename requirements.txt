@@ -1,0 +1,81 @@
+# Backend API
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.4.0
+requests>=2.31.0
+sqlalchemy>=2.0.0
+
+# Authentication
+passlib[bcrypt]>=1.7.4
+bcrypt==3.2.2  # Fixed version for passlib compatibility
+PyJWT>=2.8.0
+email-validator>=2.1.0
+
+# ML & AI
+pandas>=2.1.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+joblib>=1.3.0
+torch>=2.0.0
+tensorflow>=2.13.0  # optional for advanced models
+transformers>=4.30.0
+google-generativeai>=0.3.0  # Google's Gemini API client
+
+# Frontend
+streamlit>=1.28.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.17.0
+streamlit-extras>=0.3.0
+
+# Data Processing
+tqdm>=4.65.0
+
+# Deployment
+boto3>=1.28.0
+python-dotenv>=1.0.0
+supervisor>=4.2.5
+
+# Development & Testing
+pytest>=7.4.0
+httpx>=0.24.0
+psutil>=5.9.0  # for memory monitoring during training
+
+# Utilities
+typing-extensions>=4.7.0
+rapidfuzz>=3.0.0
+
+# OCR and Image Processing for Prescription Analysis
+easyocr>=1.7.0
+opencv-python>=4.8.0
+Pillow>=10.0.0
+pytesseract>=0.3.10
+pdf2image>=1.16.0
+PyMuPDF>=1.23.0  # for PDF processing
+pdfplumber>=0.9.0  # excellent for PDF text extraction and analysis
+fuzzywuzzy>=0.18.0  # for fuzzy string matching
+python-Levenshtein>=0.21.0  # for faster fuzzy matching
+
+# Medical NLP and Report Analysis (optional)
+# NOTE: These versions often fail to build on Python 3.12 due to thinc/spacy wheels.
+# If you need SciSpaCy/MedSpaCy, use Python 3.10/3.11 in a virtualenv or install
+# a newer compatible stack (e.g., spacy>=3.8,<3.9 and matching scispacy release).
+# spacy>=3.6.1,<3.7.0
+# scispacy>=0.5.3
+# https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.3/en_core_sci_sm-0.5.3.tar.gz
+# https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.3/en_core_sci_md-0.5.3.tar.gz
+# medspacy>=1.0.0
+nltk>=3.8.1
+textstat>=0.7.3
+wordcloud>=1.9.2
+
+# Medical Knowledge Bases and APIs (simplified for faster installation)
+requests-cache>=1.1.0
+
+# Report Generation
+reportlab>=4.0.0
+jinja2>=3.1.0
+markdown>=3.5.0
+
+# Additional ML for Medical Analysis (simplified for compatibility)
+sentence-transformers>=2.2.0

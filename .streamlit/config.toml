@@ -1,0 +1,31 @@
+[global]
+developmentMode = false
+showWarningOnDirectExecution = false
+
+[server]
+runOnSave = false
+port = 8501
+enableCORS = true
+enableXsrfProtection = false
+maxUploadSize = 50
+maxMessageSize = 50
+enableWebsocketCompression = true
+baseUrlPath = ""
+headless = false
+
+[browser]
+gatherUsageStats = false
+serverAddress = "localhost"
+
+[runner]
+magicEnabled = true
+postScriptGC = true
+fastReruns = true
+enforceSerializableSessionState = false
+
+[theme]
+base = "light"
+primaryColor = "#4299e1"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f8fafc"
+textColor = "#2d3748"

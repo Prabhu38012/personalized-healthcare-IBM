@@ -1,0 +1,107 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv
+env/
+ENV/
+.venv/
+.env/
+
+# Environment Variables (CRITICAL - Contains API Keys)
+.env
+*.env
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# ML Models
+*.pkl
+*.joblib
+*.h5
+*.model
+
+# Data files (keep structure, ignore large datasets)
+data/*.csv
+data/ehr/
+data/temp/
+data/cache/
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Docker
+.dockerignore
+
+# AWS
+.aws/
+*.pem
+
+# Streamlit
+.streamlit/secrets.toml
+.streamlit/credentials.toml
+
+# Testing and Development
+test_*.py
+*_test.py
+tests/temp/
+.coverage
+.pytest_cache/
+htmlcov/
+
+# Debug and diagnostic files
+check_*.py
+diagnose_*.py
+debug_*.py
+*_debug.py
+simple_auth_test.py
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Development containers
+.devcontainer/
+
+# Temporary files
+*.tmp
+*.temp

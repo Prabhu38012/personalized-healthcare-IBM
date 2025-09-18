@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile
+      target: backend
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONPATH=/app
+    volumes:
+      - ../data:/app/data
+      - ../backend/models:/app/backend/models
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - healthcare-network
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile
+      target: frontend
+    ports:
+      - "8501:8501"
+    environment:
+      - BACKEND_URL=http://backend:8000
+    depends_on:
+      - backend
+    networks:
+      - healthcare-network
+
+  # Production service (both frontend and backend in one container)
+  healthcare-app:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile
+      target: production
+    ports:
+      - "8000:8000"
+      - "8501:8501"
+    environment:
+      - PYTHONPATH=/app
+    volumes:
+      - ../data:/app/data
+      - ../backend/models:/app/backend/models
+    profiles:
+      - production
+    networks:
+      - healthcare-network
+
+networks:
+  healthcare-network:
+    driver: bridge
+
+volumes:
+  model_data:
+    driver: local
